@@ -75,7 +75,6 @@
 </template>
 
 <script>
-// 引入 gsap、ScrollTrigger
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 // 註冊外掛

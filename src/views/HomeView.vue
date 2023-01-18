@@ -12,6 +12,11 @@
         src="https://northman-hokkaido.com/assets/parts/type-northmanhokkaido.svg"
         alt=""
       />
+      <img
+        class="flower"
+        src="https://northman-hokkaido.com/assets/parts/icon-sevenstar-outline.svg"
+        alt=""
+      />
     </logoMarquee>
     <!-- 卡片群組 -->
     <slideCards></slideCards>

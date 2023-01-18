@@ -1,21 +1,14 @@
 <template>
-    <div class="scroll logoOuter">
-      <ul class="logoList">
-        <li ref="logoArray" v-for="item in items(logomarWidth)" :key="item">
-          <slot>
-          </slot>
-          <img
-            class="flower"
-            src="https://northman-hokkaido.com/assets/parts/icon-sevenstar-outline.svg"
-            alt=""
-          />
-        </li>
-      </ul>
-    </div>
+  <div class="scroll logoOuter">
+    <ul class="logoList">
+      <li ref="logoArray" v-for="item in items(logomarWidth)" :key="item">
+        <slot></slot>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-// 引入 gsap
 import gsap from 'gsap'
 
 export default {
@@ -34,8 +27,8 @@ export default {
       this.width = document.documentElement.clientWidth
     },
     // 隨著視窗寬度變化，計算需要幾組li(*2是因為要前後兩組)
-    items (e) {
-      return Math.ceil(this.width / (e + 32)) * 2
+    items (target) {
+      return Math.ceil(this.width / target) * 2
     }
   },
   mounted () {
@@ -52,14 +45,9 @@ export default {
       ease: 'none',
       repeat: -1
     })
-    // 利用 ResizeObserver 观察原素的长宽变化
+    // 利用 ResizeObserver 观察元素的长宽变化
     const myObserver = new ResizeObserver((entries) => {
-      console.log(entries)
       entries.forEach((entry) => {
-        console.log('entry宽度', entry.contentRect.width)
-        // 取得 插槽的節點寬度
-        console.log('slot', this.$slots.default[0].elm.clientWidth)
-        console.log(this.$slots)
         this.logomarWidth = this.$slots.default[0].elm.clientWidth
       })
     })
@@ -86,6 +74,9 @@ export default {
   border: 1px solid #d8d8d8;
 }
 .scroll > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: flex;
   height: 100%;
   width: max-content;

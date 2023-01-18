@@ -1,6 +1,6 @@
 <template>
     <div class="cards">
-      <div class="cardItem" v-for="(item, index) in cardsContent" :key="index">
+      <div class="cardItem" v-for="(card, index) in cardsContent" :key="`card_${index}`">
         <div class="left">
           <div class="number">
             <div class="count">
@@ -15,16 +15,16 @@
             <div class="star">
               <div class="icon"></div>
             </div>
-            <div class="smallTitle">{{ item.smallTitle }}</div>
+            <div class="smallTitle">{{ card.smallTitle }}</div>
           </div>
           <div class="content">
             <h3>
-              <span>{{ item.largeTitle01 }}</span>
-              <span>{{ item.largeTitle02 }}</span>
+              <span>{{ card.largeTitle01 }}</span>
+              <span>{{ card.largeTitle02 }}</span>
             </h3>
             <div class="detail">
-              <p>{{ item.text01 }}</p>
-              <p>{{ item.text02 }}</p>
+              <p>{{ card.text01 }}</p>
+              <p>{{ card.text02 }}</p>
             </div>
           </div>
         </div>
@@ -52,7 +52,6 @@
 </template>
 
 <script>
-// 引入 gsap、ScrollTrigger
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 // 註冊外掛
