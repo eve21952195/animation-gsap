@@ -2,7 +2,8 @@
 
 參考[northman日本餅舖](https://northman-hokkaido.com/)網站，實作頁面上的動態效果。
 藉由使用 gsap 套件去重現網頁中的動畫演示，且套件本身容量小效能高，能減少動畫開發上的成本。
-
+## Demo
+[Demo網址](https://eve21952195.github.io/animation-gsap/)
 ## 使用套件
 - vue2
 - vue cli

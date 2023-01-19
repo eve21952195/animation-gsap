@@ -47,8 +47,8 @@ export default {
       this.width = document.documentElement.clientWidth
     },
     // 隨著視窗寬度變化，計算需要幾組li(*2是因為要前後兩組)
-    items (target) {
-      return Math.ceil(this.width / target) * 2
+    items (imageWidth) {
+      return Math.ceil(this.width / imageWidth) * 2
     }
   },
   mounted () {

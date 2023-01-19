@@ -3,7 +3,7 @@
     <!-- 十字跑馬 -->
     <squareMarquee></squareMarquee>
     <!-- 頭部展示 -->
-    <aboutItem></aboutItem>
+    <aboutSection></aboutSection>
     <!-- logo跑馬 -->
     <logoMarquee>
       <!-- slot -->
@@ -19,7 +19,7 @@
       />
     </logoMarquee>
     <!-- 卡片群組 -->
-    <slideCards></slideCards>
+    <stackBlock></stackBlock>
 </div>
 </template>
 
@@ -27,16 +27,16 @@
 // 引入元件
 import squareMarquee from '../components/squareMarquee.vue'
 import logoMarquee from '../components/logoMarquee.vue'
-import slideCards from '../components/slideCards.vue'
-import aboutItem from '../components/aboutItem.vue'
+import stackBlock from '../components/stackBlock.vue'
+import aboutSection from '../components/aboutSection.vue'
 
 export default {
   name: 'HomeView',
   components: {
     squareMarquee,
     logoMarquee,
-    slideCards,
-    aboutItem
+    stackBlock,
+    aboutSection
   }
 }
 </script>

@@ -81,7 +81,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default {
-  name: 'aboutItem',
+  name: 'aboutSection',
   data () {
     return {
       titleAnimate: {}

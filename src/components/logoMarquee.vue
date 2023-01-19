@@ -19,6 +19,7 @@ export default {
       logomarWidth: 207,
       // 取得視窗寬度
       width: document.documentElement.clientWidth
+
     }
   },
   methods: {
@@ -27,8 +28,8 @@ export default {
       this.width = document.documentElement.clientWidth
     },
     // 隨著視窗寬度變化，計算需要幾組li(*2是因為要前後兩組)
-    items (target) {
-      return Math.ceil(this.width / target) * 2
+    items (imageWidth) {
+      return Math.ceil(this.width / imageWidth) * 2
     }
   },
   mounted () {
@@ -45,21 +46,20 @@ export default {
       ease: 'none',
       repeat: -1
     })
-    // 利用 ResizeObserver 观察元素的长宽变化
-    const myObserver = new ResizeObserver((entries) => {
+    // 利用 ResizeObserver 观察slot元素的长宽变化。為了在一開始就抓到 slot img 的寬度
+    this.myObserver = new ResizeObserver((entries) => {
       entries.forEach((entry) => {
         this.logomarWidth = this.$slots.default[0].elm.clientWidth
       })
     })
-    if (myObserver) {
-      myObserver.observe(this.$slots.default[0].elm)
-    }
+    this.myObserver.observe(this.$slots.default[0].elm)
     // 對 window 監聽 resize 事件
     window.addEventListener('resize', this.resizeHandler)
   },
   beforeDestroy () {
     // 移除監聽
     window.removeEventListener('resize', this.resizeHandler)
+    this.myObserver.unobserve(this.$slots.default[0].elm)
   }
 }
 </script>

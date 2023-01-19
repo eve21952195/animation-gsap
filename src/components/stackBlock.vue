@@ -58,7 +58,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default {
-  name: 'slideCards',
+  name: 'stackBlock',
   data () {
     return {
       cardsContent: [
